@@ -19,7 +19,7 @@ docker pull microsoft/mssql-server-linux
 docker run --name testegol -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=#CaioCarneiro" -e "MSSQL_PID=Developer" --cap-add SYS_PTRACE -p 11433:1433 -d microsoft/mssql-server-linux:2017-latest
 
 
-#Migrations
+# Migrations
 
 Add-Migration Airplane
 Update-Database
