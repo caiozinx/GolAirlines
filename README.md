@@ -1,16 +1,27 @@
 # GolAirlines
 
-O objetivo principal é criar uma aplicação contendo o CRUD completo da
-tabela Airplane:
+O objetivo principal é criar uma aplicação contendo o CRUD completo da tabela Airplane:
+
 Campos:
+
 · Código do Avião
+
 · Modelo
+
 · Quantidade de passageiros
+
 · Data de criação do registro
+
+
 Tecnologias e patterns obrigatórios:
+
+
 · FRONT-END – Angular 6
+
 · BACK-END - .Net Core / Entity Framework Core / RESTful Api
+
 · PATTERNS – DDD e Injeção de Dependência
+
 
 # Docker
 
