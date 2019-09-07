@@ -22,4 +22,5 @@ docker run --name testegol -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=#CaioCarneir
 # Migrations
 
 Add-Migration Airplane
+
 Update-Database
