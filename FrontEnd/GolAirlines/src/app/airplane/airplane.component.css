@@ -1,0 +1,48 @@
+/* airplane Component's private CSS styles */
+h2 {
+  font-family: sans-serif;
+  text-align: center;
+  color: #436389;
+}
+.button {
+  font-size: 13px;
+  padding: 5px 20px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+.airplane {
+  width: 100%;
+  min-width: 350px;
+}
+ul {
+  list-style: none;
+  margin: 3px 0px;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+span,
+a {
+  font-size: 1.125em !important;
+  text-decoration: none;
+  color: #000;
+}
+span:hover {
+  color: #aaa;
+  cursor: pointer;
+}
+.badge {
+  padding: 5px;
+}
+
+.delete {
+  max-height: 25px;
+  margin-top: 3.8px;
+}
+.delete:hover {
+  color: red;
+}

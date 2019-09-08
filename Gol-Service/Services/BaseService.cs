@@ -30,7 +30,7 @@ namespace Gol_Service.Services
         public void Delete(int id)
         {
             if (id.Equals(0))
-                throw new ArgumentException($"Please choose the {typeof(T).Name} to delete.");
+                throw new ArgumentException($"Please choose data to delete.");
 
             repository.Remove(id);
         }
@@ -41,7 +41,7 @@ namespace Gol_Service.Services
         public T Get(int id)
         {
             if (id.Equals(0))
-                throw new ArgumentException($"Please tell me the {typeof(T).Name} you want.");
+                throw new ArgumentException($"Please tell me the data you want.");
 
             return repository.Select(id);
         }
@@ -49,7 +49,7 @@ namespace Gol_Service.Services
         private void Validate(T obj, AbstractValidator<T> validator)
         {
             if (obj == null)
-                throw new Exception($"{typeof(T).Name} can't be null.");
+                throw new Exception($"data can't be null.");
 
             validator.ValidateAndThrow(obj);
         }

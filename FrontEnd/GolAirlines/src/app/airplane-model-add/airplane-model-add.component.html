@@ -1,0 +1,21 @@
+<div>
+  <h2>Airplane Model Add</h2>
+  <div>
+    <label
+      >Model Company:
+      <input
+        [(ngModel)]="airplaneData.company"
+        placeholder="Model Company"
+      /> </label
+    ><br /><br />
+    <label
+      >Model Name:
+      <input [(ngModel)]="airplaneData.name" placeholder="Model Name" /> </label
+    ><br /><br />
+    <label
+      >Model Role:
+      <input [(ngModel)]="airplaneData.role" placeholder="Model Role" /> </label
+    ><br /><br />
+  </div>
+  <button class="button" (click)="addAirplaneModel()">Save</button>
+</div>

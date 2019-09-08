@@ -1,0 +1,16 @@
+<div class="airplane">
+  <h2>Airplane List</h2>
+
+  <button class="button" (click)="add()">Add</button>
+
+  <ul>
+    <li *ngFor="let item of airplanes">
+      <a class="badge" routerLink="/airplane-details/{{ item.id }}"
+        ><span>{{ item.code }}</span></a
+      >
+      <button class="delete" title="delete airplane" (click)="delete(item.id)">
+        x
+      </button>
+    </li>
+  </ul>
+</div>

@@ -6,95 +6,96 @@ using System;
 
 namespace Gol_API.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/Airplane")]
-    [ApiController]
-    public class AirplaneController : ControllerBase
+  [Produces("application/json")]
+  [Route("api/Airplane")]
+  [ApiController]
+  public class AirplaneController : ControllerBase
+  {
+    private BaseService<Airplane> service = new BaseService<Airplane>();
+    private AirplaneService _service = new AirplaneService();
+
+    [HttpPost]
+    public IActionResult Post([FromBody] Airplane item)
     {
-        private BaseService<Airplane> service = new BaseService<Airplane>();
+      try
+      {
+        service.Post<AirplaneValidator>(item);
 
-        [HttpPost]
-        public IActionResult Post([FromBody] Airplane item)
+        return new ObjectResult(item.Id);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex);
+      }
+    }
+
+    [HttpPut]
+    public IActionResult Put([FromBody] Airplane item)
+    {
+      try
+      {
+        service.Put<AirplaneValidator>(item);
+
+        return new ObjectResult(item);
+      }
+      catch (ArgumentNullException ex)
+      {
+        return NotFound(ex);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex);
+      }
+    }
+
+    [HttpDelete]
+    public IActionResult Delete(int id)
+    {
+      try
+      {
+        service.Delete(id);
+
+        return new NoContentResult();
+      }
+      catch (ArgumentException ex)
+      {
+        return NotFound(ex);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex);
+      }
+    }
+
+    [HttpGet]
+    public IActionResult Get()
+    {
+      try
+      {
+        return new ObjectResult(_service.Get());
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex);
+      }
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult Get(int id)
+    {
+        try
         {
-            try
-            {
-                service.Post<AirplaneValidator>(item);
-
-                return new ObjectResult(item.Id);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            return new ObjectResult(_service.Get(id));
         }
-
-        [HttpPut]
-        public IActionResult Put([FromBody] Airplane item)
+        catch (ArgumentException ex)
         {
-            try
-            {
-                service.Put<AirplaneValidator>(item);
-
-                return new ObjectResult(item);
-            }
-            catch (ArgumentNullException ex)
-            {
-                return NotFound(ex);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            return NotFound(ex);
         }
-
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        catch (Exception ex)
         {
-            try
-            {
-                service.Delete(id);
-
-                return new NoContentResult();
-            }
-            catch (ArgumentException ex)
-            {
-                return NotFound(ex);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
+            return BadRequest(ex);
         }
-
-        [HttpGet]
-        public IActionResult Get()
-        {
-            try
-            {
-                return new ObjectResult(service.Get());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-        }
-
-        [HttpGet]
-        public IActionResult Get(int id)
-        {
-            try
-            {
-                return new ObjectResult(service.Get(id));
-            }
-            catch (ArgumentException ex)
-            {
-                return NotFound(ex);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
-            }
-        }
+    }
 
     }
 }

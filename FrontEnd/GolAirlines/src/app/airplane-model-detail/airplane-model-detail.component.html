@@ -1,0 +1,16 @@
+<div *ngIf="airplaneModel" class="airplanes">
+  <h2>Model Details</h2>
+  <div>
+    <strong>Company: </strong>{{ airplaneModel.company }} <br /><br />
+    <strong>Name: </strong> {{ airplaneModel.name }} <br /><br />
+    <strong>Role: </strong>{{ airplaneModel.role }}
+  </div>
+  <div>
+    <button
+      class="button"
+      routerLink="/airplane-model-edit/{{ airplaneModel.id }}"
+    >
+      Edit
+    </button>
+  </div>
+</div>

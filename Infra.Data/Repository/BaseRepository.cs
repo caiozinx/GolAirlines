@@ -3,12 +3,13 @@ using Gol_Domain.Interfaces.Repository;
 using Infra.Data.Context;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Data.Repository
 {
     public class BaseRepository<T> : IRepository<T> where T : BaseEntity
     {
-        private SqlServerContext context = new SqlServerContext();
+        protected SqlServerContext context = new SqlServerContext();
 
         public void Insert(T obj)
         {
@@ -17,7 +18,7 @@ namespace Infra.Data.Repository
         }
         public void Update(T obj)
         {
-            context.Entry(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            context.Entry(obj).State = EntityState.Modified;
             context.SaveChanges();
         }
 

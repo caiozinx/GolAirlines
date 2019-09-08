@@ -25,6 +25,8 @@ namespace Infra.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("AirplaneModelId");
+
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnName("Code");
@@ -42,12 +44,16 @@ namespace Infra.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AirplaneModelId");
+
                     b.ToTable("Airplane");
                 });
 
             modelBuilder.Entity("Gol_Domain.Entities.AirplaneModel", b =>
                 {
-                    b.Property<int>("Id");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Company")
                         .IsRequired()
@@ -72,11 +78,11 @@ namespace Infra.Data.Migrations
                     b.ToTable("AirplaneModel");
                 });
 
-            modelBuilder.Entity("Gol_Domain.Entities.AirplaneModel", b =>
+            modelBuilder.Entity("Gol_Domain.Entities.Airplane", b =>
                 {
-                    b.HasOne("Gol_Domain.Entities.Airplane")
-                        .WithOne("Model")
-                        .HasForeignKey("Gol_Domain.Entities.AirplaneModel", "Id")
+                    b.HasOne("Gol_Domain.Entities.AirplaneModel", "AirplaneModel")
+                        .WithMany("Airplanes")
+                        .HasForeignKey("AirplaneModelId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

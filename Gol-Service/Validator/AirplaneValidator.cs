@@ -15,8 +15,8 @@ namespace Gol_Service.Validator
                 throw new ArgumentNullException("Sorry about the inconvenience, airplane not found.");
             });
 
-            RuleFor(rf => rf.Model)
-                .NotNull().WithMessage("Please registry an airplane model first.")
+            RuleFor(rf => rf.AirplaneModelId)
+                .NotNull().WithMessage("Please selected the model.")
                 .NotEmpty().WithMessage("Please selected the model.");
 
             RuleFor(rf => rf.Code)

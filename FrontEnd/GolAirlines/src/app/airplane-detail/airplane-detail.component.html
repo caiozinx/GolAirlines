@@ -1,0 +1,16 @@
+<div *ngIf="airplane" class="airplanes">
+  <h2>{{ airplane.code | uppercase }} Details</h2>
+  <div>
+    <strong>Model: </strong>{{ airplane.airplaneModel.company }} -
+    {{ airplane.airplaneModel.name }} <br />
+    <strong>Role: </strong> {{ airplane.airplaneModel.role }}
+  </div>
+  <div>
+    <strong>Number of Passengers: </strong>{{ airplane.numberOfPassengers }}
+  </div>
+  <div>
+    <button class="button" routerLink="/airplane-edit/{{ airplane.id }}">
+      Edit
+    </button>
+  </div>
+</div>

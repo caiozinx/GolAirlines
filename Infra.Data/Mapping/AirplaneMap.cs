@@ -14,7 +14,7 @@ namespace Infra.Data.Mapping
             schema.Property(p => p.NumberOfPassengers).IsRequired().HasColumnName("NumberOfPassengers");
             schema.Property(p => p.CreatedAt).IsRequired().HasColumnName("CreatedAt");
             schema.Property(p => p.UpdatedAt).HasColumnName("UpdatedAt").HasDefaultValue();
-            schema.HasOne(o => o.Model).WithOne().HasForeignKey<AirplaneModel>();
+            schema.HasOne(ho => ho.AirplaneModel).WithMany().HasForeignKey("AirplaneModelId");
         }
     }
 }

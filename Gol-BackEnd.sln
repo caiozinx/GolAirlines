@@ -11,19 +11,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{B9B9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{94ED8294-8A6C-4F81-955F-E8E10F9B78D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gol-API", "Gol-API\Gol-API.csproj", "{4CB8D0B3-E034-4C89-BB96-630281265FCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gol-API", "Gol-API\Gol-API.csproj", "{4CB8D0B3-E034-4C89-BB96-630281265FCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gol-Domain", "Gol-Domain\Gol-Domain.csproj", "{8A1A87B8-1858-4631-8064-8E37FA1098EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gol-Domain", "Gol-Domain\Gol-Domain.csproj", "{8A1A87B8-1858-4631-8064-8E37FA1098EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gol-Service", "Gol-Service\Gol-Service.csproj", "{3225A9E8-175C-4A15-980C-3500361A5374}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gol-Service", "Gol-Service\Gol-Service.csproj", "{3225A9E8-175C-4A15-980C-3500361A5374}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F01EA2B0-2572-4203-BDE6-0792792152B6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{81B24BBD-7D09-43A4-9026-E20F8074AD80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Data", "Infra.Data\Infra.Data.csproj", "{B46170D8-C0E3-44EC-8335-05835B1D6CB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Data", "Infra.Data\Infra.Data.csproj", "{B46170D8-C0E3-44EC-8335-05835B1D6CB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.CrossCutting", "Infra.CrossCutting\Infra.CrossCutting.csproj", "{46784A1D-7839-48B9-B572-285592F98E8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.CrossCutting", "Infra.CrossCutting\Infra.CrossCutting.csproj", "{46784A1D-7839-48B9-B572-285592F98E8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_FrontEnd", "_FrontEnd", "{09DD3CBB-B2E4-4571-9A83-35560465506E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

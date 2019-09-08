@@ -13,6 +13,7 @@ namespace Gol_API.Controllers
     {
         private BaseService<AirplaneModel> service = new BaseService<AirplaneModel>();
 
+        [HttpPost]
         public IActionResult Post([FromBody] AirplaneModel item)
         {
             try
@@ -27,6 +28,7 @@ namespace Gol_API.Controllers
             }
         }
 
+        [HttpPut]
         public IActionResult Put([FromBody] AirplaneModel item)
         {
             try
@@ -45,6 +47,7 @@ namespace Gol_API.Controllers
             }
         }
 
+        [HttpDelete]
         public IActionResult Delete(int id)
         {
             try
@@ -63,6 +66,7 @@ namespace Gol_API.Controllers
             }
         }
 
+        [HttpGet]
         public IActionResult Get()
         {
             try
@@ -75,6 +79,7 @@ namespace Gol_API.Controllers
             }
         }
 
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             try

@@ -9,11 +9,12 @@ namespace Infra.Data.Context
     public class SqlServerContext : DbContext
     {
         public DbSet<Airplane> Airplane { get; set; }
+        public DbSet<AirplaneModel> AirplaneModel { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Data Source=192.168.99.100,11433;Initial Catalog=GolAirlines;User Id=SA;Password=#CaioCarneiro;");
+                optionsBuilder.UseSqlServer("Data Source=192.168.99.100,11433;Initial Catalog=GolAirlines;User Id=SA;Password=#CaioCarneiro;", b => b.MigrationsAssembly("Infra.Data"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

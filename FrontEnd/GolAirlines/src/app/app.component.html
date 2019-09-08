@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GolAirlines</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/51e4b557e4b007de262fdd5f/1481224404190-6R87647P24VET6N9KP9W/ke17ZwdGBToddI8pDm48kHSGDXe-Tvch9jcNgs500qUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKc6ZZhUfba_pT3g8vQWvy9or645pGFwAaSYckOZNTd_ZHL1SKZV3KlMe_g3_DM13N8/image-asset.png?format=1000w"
+          alt="Logo Gol"
+          class="pure-img logo-img"
+        />
+        <ul>
+          <li><a class="button" routerLink="/airplane">Airplane</a></li>
+          <li><a class="button" routerLink="/airplane-model">Models</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="wrapper flex-center">
+      <router-outlet></router-outlet>
+    </div>
+  </body>
+</html>

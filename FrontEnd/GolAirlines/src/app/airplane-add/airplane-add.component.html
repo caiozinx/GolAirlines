@@ -1,0 +1,28 @@
+<div>
+  <h2>Airplane Add</h2>
+  <div>
+    <label
+      >Airplane Code:
+      <input
+        [(ngModel)]="airplaneData.code"
+        placeholder="Airplane Code"
+      /> </label
+    ><br /><br />
+    <label
+      >Airplane Model:
+      <select [(ngModel)]="airplaneData.airplaneModelId">
+        <option [value]="model.id" *ngFor="let model of airplaneModel">
+          {{ model.company }} - {{ model.name }}</option
+        >
+      </select> </label
+    ><br /><br />
+    <label
+      >Airplane Number of Passengers:
+      <input
+        [(ngModel)]="airplaneData.numberOfPassengers"
+        placeholder="Airplane Number of Passengers"
+      /> </label
+    ><br /><br />
+  </div>
+  <button class="button" (click)="addAirplane()">Save</button>
+</div>

@@ -26,7 +26,7 @@ namespace Gol_API
             services.AddDbContext<SqlServerContext>();
             services.AddCors(c =>
             {
-                c.AddPolicy("AllowOrigin", op => op.AllowAnyOrigin());
+                c.AddPolicy("AllowOrigin", op => op.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             });
 
             services.AddMvc(op => op.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -48,7 +48,7 @@ namespace Gol_API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors();
+            app.UseCors("AllowOrigin");
             app.UseMvc();
         }
     }
