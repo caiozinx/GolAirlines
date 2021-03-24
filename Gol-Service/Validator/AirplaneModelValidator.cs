@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using Gol_Domain.Entities;
 using System;
 using System.Collections.Generic;

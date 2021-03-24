@@ -1,8 +1,12 @@
-﻿using Gol_Domain.Entities;
+using Gol_Domain.Entities;
 using Infra.Data.Mapping;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 
 namespace Infra.Data.Context
 {
@@ -14,7 +18,9 @@ namespace Infra.Data.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Server=tcp:__your_server__,1433;Initial Catalog=sqlserver;Persist Security Info=False;User ID=__your_user__;Password=__your_password__;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;", b => b.MigrationsAssembly("Infra.Data"));
+            {
+                optionsBuilder.UseSqlServer("Server=tcp:sqlservercaio.database.windows.net,1433;Initial Catalog=sqlserver;Persist Security Info=False;User ID=caiozinx;Password=Modafoka!@12;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;", b => b.MigrationsAssembly("Infra.Data"));
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

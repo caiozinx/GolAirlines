@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using Gol_Domain.Entities;
 using Gol_Domain.Interfaces;
 using Infra.Data.Repository;

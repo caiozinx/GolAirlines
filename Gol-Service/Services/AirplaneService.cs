@@ -1,4 +1,4 @@
-﻿using Gol_Domain.Entities;
+using Gol_Domain.Entities;
 using Gol_Domain.Interfaces.Repository;
 using Gol_Domain.Interfaces.Services;
 using Infra.Data.Repository;

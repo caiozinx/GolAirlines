@@ -1,4 +1,4 @@
-﻿using Gol_Domain.Entities;
+using Gol_Domain.Entities;
 using Gol_Service.Services;
 using Gol_Service.Validator;
 using Microsoft.AspNetCore.Mvc;

@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Gol-API/bin/Debug/netcoreapp2.2/Gol-API.dll",
+            "program": "${workspaceFolder}/Gol-API/bin/Debug/netcoreapp3.1/Gol-API.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Gol-API",
             "stopAtEntry": false,

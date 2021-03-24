@@ -1,4 +1,4 @@
-﻿using Gol_Domain.Entities;
+using Gol_Domain.Entities;
 using Gol_Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
