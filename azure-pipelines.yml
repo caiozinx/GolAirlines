@@ -16,7 +16,7 @@ variables:
   # Web app name
   webAppName: 'backendcaio'
   # SolutionPath
-  SolutionsPath: '**/Gol-API/Gol-API.csproj'
+  SolutionPath: '**/Gol-API/Gol-API.csproj'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
