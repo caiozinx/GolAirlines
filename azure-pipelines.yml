@@ -26,7 +26,7 @@ steps:
 - script: 'dotnet tool install --global dotnet-ef'
   displayName: Install dotnet EF
   
-- script: 'cd $(SolutionMigrationPath} dotnet ef database update'
+- script: 'cd $(SolutionMigrationPath) dotnet ef database update'
   displayName: Run Migration
 - task: DotNetCoreCLI@2
   displayName: 'Publish and zip'
