@@ -14,7 +14,7 @@ namespace Infra.Data.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Data Source=192.168.99.100,11433;Initial Catalog=GolAirlines;User Id=SA;Password=#CaioCarneiro;", b => b.MigrationsAssembly("Infra.Data"));
+                optionsBuilder.UseSqlServer("Server=tcp:__your_server__,1433;Initial Catalog=sqlserver;Persist Security Info=False;User ID=__your_user__;Password=__your_password__;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;", b => b.MigrationsAssembly("Infra.Data"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
