@@ -10,8 +10,8 @@
     ><br /><br />
     <label
       >Airplane Model:
-      <select [(ngModel)]="airplaneData.airplaneModelId">
-        <option [value]="model.id" *ngFor="let model of airplaneModel">
+      <select [(ngModel)]="airplaneData.airplaneModelId" type="number">
+        <option [ngValue]="model.id" *ngFor="let model of airplaneModel" type="number" >
           {{ model.company }} - {{ model.name }}</option
         >
       </select> </label
@@ -21,6 +21,7 @@
       <input
         [(ngModel)]="airplaneData.numberOfPassengers"
         placeholder="Airplane Number of Passengers"
+        type="number"
       /> </label
     ><br /><br />
   </div>

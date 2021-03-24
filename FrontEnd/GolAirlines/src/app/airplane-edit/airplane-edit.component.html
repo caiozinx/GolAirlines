@@ -11,7 +11,7 @@
     <label
       >Airplane Model:
       <select [(ngModel)]="airplaneData.airplaneModelId">
-        <option [value]="model.id" *ngFor="let model of airplaneModel">
+        <option [ngValue]="model.id" *ngFor="let model of airplaneModel">
           {{ model.company }} - {{ model.name }}</option
         >
       </select> </label
