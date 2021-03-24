@@ -7,7 +7,7 @@ import {
 import { Observable, of } from "rxjs";
 import { map, catchError, tap } from "rxjs/operators";
 
-const endpoint = "http://localhost:60255/api/";
+const endpoint = "https://backendcaio.azurewebsites.net/api/";
 const httpOption = {
   headers: new HttpHeaders({
     "Content-Type": "application/json"
