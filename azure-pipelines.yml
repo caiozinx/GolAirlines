@@ -17,19 +17,11 @@ variables:
   webAppName: 'backendcaio'
   # SolutionPath
   SolutionPath: '**/Gol-API/Gol-API.csproj'
-  SolutionMigrationPath: './Infra.Data/'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
-- script: 'dotnet tool install --global dotnet-ef'
-  displayName: Install dotnet EF
-  
-- script: 'cd $(SolutionMigrationPath)'
-  displayName: Goto Infra.Data
-- script: 'dotnet ef database update'
-  displayName: Run Migration
 - task: DotNetCoreCLI@2
   displayName: 'Publish and zip'
   inputs:
