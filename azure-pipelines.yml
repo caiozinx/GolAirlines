@@ -17,33 +17,11 @@ variables:
   webAppName: 'backendcaio'
   # SolutionPath
   SolutionPath: '**/Gol-API/Gol-API.csproj'
-  SolutionMigrationPath: '**/Infra.Data/Infra.Data.csproj'
-  your_user: 'caiozinx'
-  your_password: 'Modafoka!@12'
-  your_server: 'sqlservercaio.database.windows.net'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
-- task: replacetokens@3
-  inputs:
-    targetFiles: '**/Infra.Data/Context/SqlServerContext.cs'
-    encoding: 'auto'
-    writeBOM: false
-    actionOnMissing: 'fail'
-    keepToken: false
-    tokenPrefix: '__'
-    tokenSuffix: '__'
-    useLegacyPattern: false
-    enableTransforms: false
-    enableTelemetry: true
-- task: DotNetCoreCLI@2
-  displayName: 'Run Migrations'
-  inputs:
-    command: 'run'
-    projects: $(SolutionMigrationPath)
-    arguments: 'dotnet ef database update'
 - task: DotNetCoreCLI@2
   displayName: 'Publish and zip'
   inputs:
