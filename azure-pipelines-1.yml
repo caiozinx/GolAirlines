@@ -1,0 +1,44 @@
+# Node.js with Angular
+# Build a Node.js project that uses Angular.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+    # Azure Resource Manager connection created during pipeline creation
+  azureServiceConnectionId: '390f1bbb-90b8-4d01-929b-610002ab3164'
+  # Web app name
+  webAppName: 'frontendcaio'
+  # SolutionPath
+  SolutionPath: '**/FrontEnd/GolAirlines/'
+
+steps:
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '$(SolutionPath)'
+
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: '$(SolutionPath)'
+    customCommand: 'run build'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
